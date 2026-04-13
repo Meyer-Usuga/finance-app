@@ -16,6 +16,11 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
+
+  @media (max-width: 480px) {
+    padding: var(--space-sm);
+    gap: var(--space-sm);
+  }
 }
 
 .fortnight-header {
@@ -63,6 +68,16 @@
     justify-content: space-between;
     align-items: center;
     font-size: 0.95rem;
+    gap: var(--space-sm);
+
+    span:first-child {
+      flex-shrink: 0;
+    }
+
+    span:last-child {
+      text-align: right;
+      word-break: break-all;
+    }
 
     &.expenses {
       color: var(--color-error);
@@ -72,6 +87,10 @@
       font-size: 1.1rem;
       color: var(--color-primary-dark);
       padding-top: var(--space-xs);
+
+      @media (max-width: 480px) {
+        font-size: 1rem;
+      }
 
       .negative {
         color: var(--color-error);
@@ -281,12 +300,26 @@
     box-shadow: var(--shadow-md);
   }
 
+  @media (max-width: 480px) {
+    flex-direction: column;
+    align-items: stretch;
+    padding: var(--space-sm);
+    gap: var(--space-xs);
+  }
+
   .expense-info {
     display: flex;
     justify-content: space-between;
     width: 100%;
     margin-right: var(--space-md);
     align-items: center;
+
+    @media (max-width: 480px) {
+      margin-right: 0;
+      margin-bottom: var(--space-xs);
+      border-bottom: 1px dashed var(--color-border);
+      padding-bottom: var(--space-xs);
+    }
 
     .drag-handle {
       cursor: grab;
@@ -301,6 +334,10 @@
 
       &:hover {
         color: var(--color-primary);
+      }
+
+      @media (max-width: 480px) {
+        display: none; /* Hide drag on mobile to save space and avoid accidents */
       }
     }
 
@@ -331,6 +368,11 @@
     display: flex;
     gap: 4px;
 
+    @media (max-width: 480px) {
+      justify-content: space-between;
+      width: 100%;
+    }
+
     .toggle-button,
     .copy-button,
     .delete-button,
@@ -344,6 +386,11 @@
       align-items: center;
       justify-content: center;
       transition: background-color 0.15s;
+
+      @media (max-width: 480px) {
+        padding: 6px; /* Larger hit area */
+        flex: 1;
+      }
     }
 
     .toggle-button {

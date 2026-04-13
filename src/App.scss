@@ -67,9 +67,33 @@
 @media (max-width: 768px) {
   .app-main {
     padding: var(--space-md);
+    gap: var(--space-md);
   }
 
   .month-content {
     padding: var(--space-md);
+  }
+
+  .month-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-main {
+    padding: var(--space-sm);
+  }
+
+  .month-content {
+    padding: var(--space-sm);
+    border-radius: var(--border-radius-md);
+  }
+
+  .app-header {
+    padding: var(--space-md);
+    
+    .header-logo h1 {
+      font-size: 1.25rem;
+    }
   }
 }
